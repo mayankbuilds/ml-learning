@@ -11,7 +11,6 @@ A practical repository for learning and implementing classical machine learning 
 - Model evaluation and validation
 - Feature engineering and selection
 - Machine learning pipelines
-- Practical machine learning projects
 
 ## Repository Structure
 
@@ -19,14 +18,9 @@ A practical repository for learning and implementing classical machine learning 
 mathematics/     # Mathematical foundations for ML
 classical-ml/    # Classical ML concepts and algorithms
 notebooks/       # Data exploration, experiments, and practice
-projects/        # End-to-end ML projects
 notes/           # Concept notes and revision material
 resources/       # Courses, papers, and documentation
 ```
-
-## Learning Approach
-
-This repository focuses on understanding core concepts, implementing algorithms with Python, evaluating models correctly, and applying machine learning to practical problems.
 
 ## Tech Stack
 
@@ -36,10 +30,6 @@ This repository focuses on understanding core concepts, implementing algorithms 
 - Matplotlib
 - scikit-learn
 - Jupyter / Google Colab
-
-## Status
-
-Currently focused on mathematical foundations and classical machine learning.
 
 ## Purpose
 
