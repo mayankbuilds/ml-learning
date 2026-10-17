@@ -1,28 +1,46 @@
-# ML Learning
+# Machine Learning
 
-A personal repository for learning and practicing Machine Learning, Deep Learning, and modern AI.
+A practical repository for learning and implementing classical machine learning concepts, algorithms, and workflows.
 
 ## Topics
 
-- Machine Learning
-- Mathematics for ML
-- Deep Learning
-- Generative AI
-- RAG
-- Agentic AI
+- Mathematics for Machine Learning
+- Data preprocessing and exploratory data analysis
+- Supervised learning
+- Unsupervised learning
+- Model evaluation and validation
+- Feature engineering and selection
+- Machine learning pipelines
+- Practical machine learning projects
 
-## Structure
+## Repository Structure
 
 ```text
-mathematics/      # Math for ML
-classical-ml/     # Classical machine learning
-deep-learning/    # Deep learning and PyTorch
-generative-ai/    # LLMs and related concepts
-agentic-ai/       # AI agents and workflows
-notebooks/        # Experiments and notebooks
-projects/         # Learning projects
-notes/            # Notes and references
-resources/        # Courses, papers, and documentation
+mathematics/     # Mathematical foundations for ML
+classical-ml/    # Classical ML concepts and algorithms
+notebooks/       # Data exploration, experiments, and practice
+projects/        # End-to-end ML projects
+notes/           # Concept notes and revision material
+resources/       # Courses, papers, and documentation
 ```
 
-This repository is mainly for learning, experimentation, and practice.
+## Learning Approach
+
+This repository focuses on understanding core concepts, implementing algorithms with Python, evaluating models correctly, and applying machine learning to practical problems.
+
+## Tech Stack
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- scikit-learn
+- Jupyter / Google Colab
+
+## Status
+
+Currently focused on mathematical foundations and classical machine learning.
+
+## Purpose
+
+A hands-on learning repository documenting practical work in classical machine learning, from data preparation to model evaluation and complete projects.
