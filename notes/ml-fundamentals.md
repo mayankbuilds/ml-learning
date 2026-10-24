@@ -17,31 +17,31 @@ Related deep-dive topics:
 Machine Learning (ML) is an engineering and scientific paradigm focused on constructing computer programs that automatically improve their performance at a given task through experience and exposure to data, rather than through exclusively handcrafted rule-based logic.
 
 ### Formal Formulation (Tom Mitchell, 1997)
-> "A computer program is said to learn from experience \(E\) with respect to some class of tasks \(T\) and performance measure \(P\), if its performance at tasks in \(T\), as measured by \(P\), improves with experience \(E\)."
+> "A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$."
 
-In mathematical terms, supervised machine learning seeks an approximating function \(\hat{f}\) such that:
+In mathematical terms, supervised machine learning seeks an approximating function $\hat{f}$ such that:
 
-\[
+$$
 y = f(X) + \epsilon
-\]
+$$
 
 Where:
-- \(X \in \mathbb{R}^{n \times d}\): Feature matrix representing \(n\) samples and \(d\) input dimensions.
-- \(y \in \mathbb{R}^n\): True ground-truth target vector.
-- \(\hat{f}(X; \theta)\): Learned model parameterized by \(\theta\).
-- \(\epsilon\): Irreducible noise component with \(\mathbb{E}[\epsilon] = 0\) and \(\text{Var}(\epsilon) = \sigma^2\).
+- $X \in \mathbb{R}^{n \times d}$: Feature matrix representing $n$ samples and $d$ input dimensions.
+- $y \in \mathbb{R}^n$: True ground-truth target vector.
+- $\hat{f}(X; \theta)$: Learned model parameterized by $\theta$.
+- $\epsilon$: Irreducible noise component with $\mathbb{E}[\epsilon] = 0$ and $\text{Var}(\epsilon) = \sigma^2$.
 
 ### Key Terminology
 
 | Concept | Definition | Example |
 |---|---|---|
-| **Features (\(X\))** | Input independent variables used to describe each instance. | House square footage, number of rooms, postal code. |
-| **Target (\(y\))** | Ground truth label or quantity to predict. | House sales price (continuous), spam/ham (categorical). |
+| **Features ($X$)** | Input independent variables used to describe each instance. | House square footage, number of rooms, postal code. |
+| **Target ($y$)** | Ground truth label or quantity to predict. | House sales price (continuous), spam/ham (categorical). |
 | **Sample / Instance** | A single row or observation in the dataset. | One specific house listing. |
-| **Model Parameters (\(\theta\))** | Internal coefficients learned automatically from data during training. | Weights \(w\) and bias \(b\) in linear models. |
-| **Hyperparameters** | External configuration knobs set before training starts. | Regularization strength \(C\), tree depth `max_depth`, learning rate \(\eta\). |
-| **Loss Function (\(\mathcal{L}\))** | Error penalty computed on a single training example. | Squared error \((y_i - \hat{y}_i)^2\). |
-| **Cost Function (\(J\))** | Aggregate loss averaged across the entire training dataset. | Mean Squared Error \(\frac{1}{n} \sum (y_i - \hat{y}_i)^2\). |
+| **Model Parameters ($\theta$)** | Internal coefficients learned automatically from data during training. | Weights $w$ and bias $b$ in linear models. |
+| **Hyperparameters** | External configuration knobs set before training starts. | Regularization strength $C$, tree depth `max_depth`, learning rate $\eta$. |
+| **Loss Function ($\mathcal{L}$)** | Error penalty computed on a single training example. | Squared error $(y_i - \hat{y}_i)^2$. |
+| **Cost Function ($J$)** | Aggregate loss averaged across the entire training dataset. | Mean Squared Error $\frac{1}{n} \sum (y_i - \hat{y}_i)^2$. |
 
 ---
 
@@ -60,12 +60,12 @@ Where:
 ```
 
 ### 1. Supervised Learning
-The training dataset contains both inputs \(X\) and verified labels \(y\). The objective is to learn a mapping \(X \to y\) that accurately predicts targets for new, unseen inputs.
-- **Regression:** Continuous numerical target (e.g., forecasting temperatures, housing prices, delivery durations). Metrics: MAE, MSE, RMSE, \(R^2\).
+The training dataset contains both inputs $X$ and verified labels $y$. The objective is to learn a mapping $X \to y$ that accurately predicts targets for new, unseen inputs.
+- **Regression:** Continuous numerical target (e.g., forecasting temperatures, housing prices, delivery durations). Metrics: MAE, MSE, RMSE, $R^2$.
 - **Classification:** Categorical target labels (e.g., medical diagnosis, fraudulent transaction detection, document tagging). Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC.
 
 ### 2. Unsupervised Learning
-The dataset contains features \(X\) without target labels \(y\). The objective is to discover latent structure, groupings, or compressed representations.
+The dataset contains features $X$ without target labels $y$. The objective is to discover latent structure, groupings, or compressed representations.
 - **Clustering:** Partitioning observations into coherent clusters based on geometric proximity or statistical density (e.g., K-Means, DBSCAN).
 - **Dimensionality Reduction:** Compressing high-dimensional feature spaces while preserving maximum variance or pairwise distances (e.g., PCA, t-SNE, UMAP).
 - **Anomaly Detection:** Flagging rare observations that deviate substantially from typical data density.
@@ -167,13 +167,13 @@ Generalization is the model's capacity to deliver accurate predictions on new, p
 #### How to Address Underfitting
 1. Increase model capacity (e.g., transition from linear models to tree ensembles or kernel SVMs).
 2. Engineer informative interaction features or domain-specific attributes.
-3. Relax regularization constraints (increase \(C\) in Logistic Regression, decrease \(\alpha\) in Ridge/Lasso).
+3. Relax regularization constraints (increase $C$ in Logistic Regression, decrease $\alpha$ in Ridge/Lasso).
 4. Verify data quality and ensure the target is actually predictable from provided inputs.
 
 #### How to Address Overfitting
 1. Gather more representative training samples.
 2. Reduce model capacity (restrict `max_depth`, increase `min_samples_leaf`, prune trees).
-3. Introduce or increase regularization penalties (\(L_1\) Lasso, \(L_2\) Ridge, weight decay).
+3. Introduce or increase regularization penalties ($L_1$ Lasso, $L_2$ Ridge, weight decay).
 4. Remove uninformative or collinear features using feature selection.
 5. Use Cross-Validation to validate hyperparameter decisions rather than fitting to noise.
 6. Check for data leakage between training and validation splits.
@@ -186,31 +186,31 @@ The Bias-Variance Tradeoff is the fundamental theoretical tension governing supe
 
 ### Mathematical Decomposition of Expected Prediction Error
 
-For a squared-error loss function, the expected test error at a query point \(x_0\) decomposes into three distinct non-negative components:
+For a squared-error loss function, the expected test error at a query point $x_0$ decomposes into three distinct non-negative components:
 
-\[
+$$
 \mathbb{E} \left[ (y - \hat{f}(x_0))^2 \right] = \underbrace{\Big( \mathbb{E}[\hat{f}(x_0)] - f(x_0) \Big)^2}_{\text{Bias}^2} + \underbrace{\mathbb{E} \left[ \Big( \hat{f}(x_0) - \mathbb{E}[\hat{f}(x_0)] \Big)^2 \right]}_{\text{Variance}} + \underbrace{\sigma^2}_{\text{Irreducible Noise}}
-\]
+$$
 
-### 1. Bias Squared (\(\text{Bias}^2\))
+### 1. Bias Squared ($\text{Bias}^2$)
 Measures the error introduced by approximating a complex real-world phenomenon with a simplified model class. High bias indicates the model systematically makes wrong assumptions regardless of sample size.
 
-### 2. Variance (\(\text{Variance}\))
+### 2. Variance ($\text{Variance}$)
 Measures the variability of model predictions if trained on different random subsets of the same data generation process. High variance indicates excessive sensitivity to small fluctuations in the training sample.
 
-### 3. Irreducible Error (\(\sigma^2\))
-The variance of the inherent noise \(\epsilon\) in the underlying system. No algorithm, regardless of capacity or data volume, can reduce error below \(\sigma^2\).
+### 3. Irreducible Error ($\sigma^2$)
+The variance of the inherent noise $\epsilon$ in the underlying system. No algorithm, regardless of capacity or data volume, can reduce error below $\sigma^2$.
 
 ### Tradeoff Dynamics
 
-\[
+$$
 \text{Total Expected Error} = \text{Bias}^2 + \text{Variance} + \sigma^2
-\]
+$$
 
 As model complexity increases:
 - **Bias monotonically decreases:** The model becomes expressive enough to represent intricate patterns.
 - **Variance monotonically increases:** The model fits specific sample idiosyncrasies and noise.
-- **Optimal Model Complexity:** The trough where the sum of \(\text{Bias}^2\) and \(\text{Variance}\) is minimized.
+- **Optimal Model Complexity:** The trough where the sum of $\text{Bias}^2$ and $\text{Variance}$ is minimized.
 
 ---
 
@@ -244,13 +244,13 @@ Ensures that the relative proportions of target classes remain identical across 
 - Prevents rare classes from vanishing completely from either partition.
 
 ### 3. K-Fold Cross-Validation
-Partitions the training data into \(K\) equally sized folds. The model is trained on \(K-1\) folds and validated on the remaining fold, repeating \(K\) times so every observation serves as validation once.
+Partitions the training data into $K$ equally sized folds. The model is trained on $K-1$ folds and validated on the remaining fold, repeating $K$ times so every observation serves as validation once.
 
-\[
+$$
 \text{CV Score} = \frac{1}{K} \sum_{k=1}^K \text{Score}_k
-\]
+$$
 
-- Standard choice: \(K = 5\) or \(K = 10\).
+- Standard choice: $K = 5$ or $K = 10$.
 - Provides both an expected performance estimate and an estimate of performance variability (standard deviation across folds).
 
 ### 4. Stratified K-Fold Cross-Validation (`StratifiedKFold`)
@@ -298,8 +298,8 @@ baseline_clf_pred = dummy_clf.predict(X_test)
 
 | Task | Baseline Strategy | Recommended Metric Comparison |
 |---|---|---|
-| **Regression** | Mean of training \(y\) | Compare MAE / RMSE; Baseline has \(R^2 = 0.0\). |
-| **Regression (outliers)** | Median of training \(y\) | Compare MAE against median prediction. |
+| **Regression** | Mean of training $y$ | Compare MAE / RMSE; Baseline has $R^2 = 0.0$. |
+| **Regression (outliers)** | Median of training $y$ | Compare MAE against median prediction. |
 | **Classification (balanced)** | Uniform random or single feature rule | Accuracy, F1-score. |
 | **Classification (imbalanced)** | Majority class (`most_frequent`) | Compare Balanced Accuracy, Precision, Recall, PR-AUC. |
 
@@ -493,13 +493,13 @@ print("Pipeline serialized successfully to 'final_pipeline.joblib'")
 
 ## 12. Quick Revision Cheatsheet
 
-- **Supervised:** Inputs \(X\) + Labels \(y\); predicts continuous (Regression) or discrete (Classification) outputs.
-- **Unsupervised:** Inputs \(X\) only; discovers grouping (Clustering) or representation (Dimensionality Reduction).
+- **Supervised:** Inputs $X$ + Labels $y$; predicts continuous (Regression) or discrete (Classification) outputs.
+- **Unsupervised:** Inputs $X$ only; discovers grouping (Clustering) or representation (Dimensionality Reduction).
 - **Features & Target:** `X.shape == (n_samples, n_features)`; `y.shape == (n_samples,)`.
 - **Underfitting:** High bias, poor training score, poor test score. Fix by increasing complexity or relaxing regularization.
 - **Overfitting:** High variance, excellent training score, poor test score. Fix with regularization, more data, or pruning.
-- **Bias-Variance Decomposition:** \(\text{Error} = \text{Bias}^2 + \text{Variance} + \sigma^2\).
-- **Split Protocol:** Train (learn parameters) \(\to\) Validation (tune hyperparameters) \(\to\) Test (final check).
+- **Bias-Variance Decomposition:** $\text{Error} = \text{Bias}^2 + \text{Variance} + \sigma^2$.
+- **Split Protocol:** Train (learn parameters) $\to$ Validation (tune hyperparameters) $\to$ Test (final check).
 - **Stratification:** Maintains class ratios; essential for imbalanced classification tasks.
 - **Data Leakage:** Information from the future or test partition contaminating training. Avoid via `Pipeline`.
 - **Baseline:** Mandatory reference anchor (`DummyRegressor`, `DummyClassifier`) before building complex models.
