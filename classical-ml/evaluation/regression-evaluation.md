@@ -10,9 +10,9 @@ Evaluation metrics quantify prediction errors and help compare candidate models.
 
 MAE is the average absolute difference between actual and predicted values.
 
-\[
-MAE=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
-\]
+$$
+\text{MAE}=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
+$$
 
 - Lower is better.
 - Expressed in the target's units.
@@ -22,9 +22,9 @@ MAE=\frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
 
 MSE averages squared prediction errors.
 
-\[
-MSE=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
-\]
+$$
+\text{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+$$
 
 - Lower is better.
 - Penalizes large errors more heavily because errors are squared.
@@ -34,9 +34,9 @@ MSE=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
 
 RMSE is the square root of MSE.
 
-\[
-RMSE=\sqrt{MSE}
-\]
+$$
+\text{RMSE}=\sqrt{\text{MSE}}
+$$
 
 - Lower is better.
 - Expressed in the target's units.

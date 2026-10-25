@@ -19,9 +19,9 @@ For integer zeros: `np.zeros((2, 2), dtype=int)`.
 
 A square matrix with ones on the main diagonal and zeros elsewhere.
 
-\[
+$$
 I=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}
-\]
+$$
 
 ```python
 I = np.eye(3)
@@ -41,9 +41,9 @@ print(D)
 
 This creates:
 
-\[
+$$
 D=\begin{bmatrix}2&0&0\\0&5&0\\0&0&3\end{bmatrix}
-\]
+$$
 
 Every identity matrix is diagonal, but a diagonal matrix is not necessarily an identity matrix.
 

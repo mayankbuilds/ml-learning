@@ -47,17 +47,17 @@ The dot product returns a single number. In ML, weighted sums such as `w · x + 
 
 The Euclidean norm measures vector length:
 
-\[
+$$
 \|v\|_2 = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}
-\]
+$$
 
 For `[3, 4]`, the norm is `5`.
 
 Distance between vectors is the norm of their difference:
 
-\[
+$$
 d(a,b) = \|a-b\|_2
-\]
+$$
 
 For `a = [1, 2]` and `b = [4, 6]`, the distance is `sqrt(3² + 4²) = 5`.
 
@@ -105,9 +105,9 @@ print(A @ B)  # [[19 22], [43 50]]
 
 Matrix multiplication shape rule:
 
-\[
+$$
 (m,n) @ (n,p) \longrightarrow (m,p)
-\]
+$$
 
 The inner dimensions must match: columns of the first matrix equal rows of the second. The output has the outer dimensions.
 
@@ -148,17 +148,17 @@ print(I @ D)  # D
 
 For a 2×2 matrix,
 
-\[
+$$
 A=\begin{bmatrix}a&b\\c&d\end{bmatrix},
 \qquad \det(A)=ad-bc
-\]
+$$
 
 Example:
 
-\[
+$$
 \det\begin{bmatrix}2&3\\1&4\end{bmatrix}
 =2(4)-3(1)=5
-\]
+$$
 
 A square matrix with a non-zero determinant is invertible. If its determinant is zero, its ordinary inverse does not exist.
 
@@ -176,12 +176,12 @@ Floating-point results may be very close to zero rather than exactly zero.
 
 A matrix can transform a vector:
 
-\[
+$$
 \begin{bmatrix}2&0\\0&3\end{bmatrix}
 \begin{bmatrix}1\\2\end{bmatrix}
 =
 \begin{bmatrix}2\\6\end{bmatrix}
-\]
+$$
 
 ```python
 A = np.array([[2, 0],
@@ -197,11 +197,11 @@ This matrix scales the first coordinate by 2 and the second by 3. In ML, matrix 
 
 A non-zero vector `v` is an eigenvector of a square matrix `A` if applying `A` changes only its scale, not its direction:
 
-\[
+$$
 Av = \lambda v
-\]
+$$
 
-Here, `λ` is the eigenvalue, or scale factor.
+Here, $\lambda$ is the eigenvalue, or scale factor.
 
 For `A = [[2, 0], [0, 3]]`, `[1, 0]` is an eigenvector with eigenvalue 2, and `[0, 1]` is an eigenvector with eigenvalue 3.
 

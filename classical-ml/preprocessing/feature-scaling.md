@@ -15,9 +15,9 @@ Without scaling, income may dominate distance calculations because its numerical
 
 `StandardScaler` subtracts the training mean and divides by the training standard deviation.
 
-\[
+$$
 z = \frac{x-\mu}{\sigma}
-\]
+$$
 
 The transformed training feature typically has mean near 0 and standard deviation near 1.
 
@@ -27,9 +27,9 @@ Standardization does not guarantee that values lie between 0 and 1.
 
 `MinMaxScaler` usually transforms training values into the range 0 to 1.
 
-\[
+$$
 x' = \frac{x-x_{\min}}{x_{\max}-x_{\min}}
-\]
+$$
 
 This is sensitive to extreme values. Values outside the training range can transform to values below 0 or above 1.
 

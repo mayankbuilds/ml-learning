@@ -20,9 +20,9 @@ The cost of FP versus FN depends on the application.
 
 ## 2. Accuracy
 
-\[
-Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
-\]
+$$
+\text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
+$$
 
 Accuracy measures the fraction of predictions that are correct.
 
@@ -30,9 +30,9 @@ It can be misleading when classes are imbalanced. For example, predicting every 
 
 ## 3. Precision
 
-\[
-Precision=\frac{TP}{TP+FP}
-\]
+$$
+\text{Precision}=\frac{TP}{TP+FP}
+$$
 
 Precision measures how many predicted positives are actually positive.
 
@@ -40,9 +40,9 @@ Use it when false positive predictions are particularly costly.
 
 ## 4. Recall
 
-\[
-Recall=\frac{TP}{TP+FN}
-\]
+$$
+\text{Recall}=\frac{TP}{TP+FN}
+$$
 
 Recall measures how many actual positives the model identifies.
 
@@ -50,9 +50,9 @@ Use it when missing positive cases is particularly costly.
 
 ## 5. F1-score
 
-\[
-F1=2\frac{Precision\cdot Recall}{Precision+Recall}
-\]
+$$
+F_1=2\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}
+$$
 
 F1 is the harmonic mean of precision and recall. It is useful when both matter, but it ignores true negatives and does not directly express business cost.
 

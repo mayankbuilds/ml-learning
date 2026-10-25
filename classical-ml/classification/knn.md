@@ -4,7 +4,7 @@
 
 k-Nearest Neighbors is a distance-based classification algorithm.
 
-For a new observation, it finds the \(k\) closest training observations and predicts a class using their labels, typically through majority voting.
+For a new observation, it finds the $k$ closest training observations and predicts a class using their labels, typically through majority voting.
 
 It is a non-parametric, instance-based method: it does not learn a fixed coefficient vector like Logistic Regression. Instead, it retains training data for prediction.
 
@@ -12,19 +12,19 @@ It is a non-parametric, instance-based method: it does not learn a fixed coeffic
 
 Euclidean distance between two observations is:
 
-\[
+$$
 d(x,z)=\sqrt{\sum_{j=1}^{p}(x_j-z_j)^2}
-\]
+$$
 
 Other distance metrics are available, depending on the data and estimator configuration.
 
 ## 3. Choosing k
 
-- Small \(k\): more sensitive to individual observations and noise.
-- Large \(k\): smoother decisions but can miss local patterns.
-- An even \(k\) can create voting ties in binary classification.
+- Small $k$: more sensitive to individual observations and noise.
+- Large $k$: smoother decisions but can miss local patterns.
+- An even $k$ can create voting ties in binary classification.
 
-Choose \(k\) using validation or cross-validation.
+Choose $k$ using validation or cross-validation.
 
 ## 4. Implementation
 
@@ -67,7 +67,7 @@ Scaling is especially important for distance-based models. Without scaling, feat
 
 ## 5. Important Hyperparameters
 
-- `n_neighbors`: number of neighbors, \(k\).
+- `n_neighbors`: number of neighbors, $k$.
 - `weights`: uniform or distance-based voting.
 - `metric`: distance measure.
 - `p`: Minkowski distance parameter; `p=2` corresponds to Euclidean distance.
@@ -89,13 +89,13 @@ Scaling is especially important for distance-based models. Without scaling, feat
 ## Common Mistakes
 
 - Forgetting to scale numerical features.
-- Choosing \(k\) without validation.
+- Choosing $k$ without validation.
 - Using too many irrelevant features.
-- Assuming a higher \(k\) is always better.
+- Assuming a higher $k$ is always better.
 
 ## Quick Revision
 
 - kNN predicts using nearby labeled observations.
-- Small \(k\) can have high variance.
-- Large \(k\) can oversmooth decision boundaries.
+- Small $k$ can have high variance.
+- Large $k$ can oversmooth decision boundaries.
 - Scaling and distance choice matter.

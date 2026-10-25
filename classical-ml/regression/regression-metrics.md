@@ -4,15 +4,15 @@ Regression metrics quantify the difference between observed target values and mo
 
 Let:
 
-- \(y_i\): observed target
-- \(\hat{y}_i\): predicted target
-- \(n\): number of observations
+- $y_i$: observed target
+- $\hat{y}_i$: predicted target
+- $n$: number of observations
 
 ## 1. Mean Absolute Error (MAE)
 
-\[
-MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
-\]
+$$
+\text{MAE} = \frac{1}{n}\sum_{i=1}^{n}|y_i-\hat{y}_i|
+$$
 
 MAE is the average absolute prediction error.
 
@@ -24,9 +24,9 @@ Use MAE when average absolute error is easy to interpret.
 
 ## 2. Mean Squared Error (MSE)
 
-\[
-MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
-\]
+$$
+\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+$$
 
 MSE averages the squared prediction errors.
 
@@ -36,9 +36,9 @@ MSE averages the squared prediction errors.
 
 ## 3. Root Mean Squared Error (RMSE)
 
-\[
-RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
-\]
+$$
+\text{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}
+$$
 
 RMSE is the square root of MSE.
 
@@ -48,13 +48,13 @@ RMSE is the square root of MSE.
 
 ## 4. R² Score
 
-\[
+$$
 R^2 = 1 -
 \frac{\sum_i(y_i-\hat{y}_i)^2}
 {\sum_i(y_i-\bar{y})^2}
-\]
+$$
 
-Where \(\bar{y}\) is the mean of the observed target values.
+Where $\bar{y}$ is the mean of the observed target values.
 
 R² compares the model's squared error with a reference based on predicting the observed target mean.
 
@@ -118,19 +118,19 @@ Suppose the actual values are `[3, 5, 7]` and predictions are `[2, 5, 9]`.
 
 Absolute errors are `[1, 0, 2]`.
 
-\[
-MAE = \frac{1+0+2}{3}=1
-\]
+$$
+\text{MAE} = \frac{1+0+2}{3}=1
+$$
 
 Squared errors are `[1, 0, 4]`.
 
-\[
-MSE = \frac{1+0+4}{3}=\frac{5}{3}
-\]
+$$
+\text{MSE} = \frac{1+0+4}{3}=\frac{5}{3}
+$$
 
-\[
-RMSE = \sqrt{\frac{5}{3}}\approx 1.291
-\]
+$$
+\text{RMSE} = \sqrt{\frac{5}{3}}\approx 1.291
+$$
 
 This illustrates why MAE and RMSE can give different impressions of the same predictions.
 

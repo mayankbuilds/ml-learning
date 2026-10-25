@@ -3,17 +3,17 @@
 A comprehensive reference and revision guide covering algorithms, mathematical formulations, preprocessing pipelines, model selection, and evaluation across classical supervised and unsupervised learning.
 
 Related deep-dive topic guides:
-- **Preprocessing:** [missing-values.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/missing-values.md) | [encoding.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/encoding.md) | [feature-scaling.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/feature-scaling.md) | [pipelines.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/pipelines.md)
-- **Regression:** [linear-regression.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/regression/linear-regression.md) | [regularization.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/regression/regularization.md) | [regression-metrics.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/regression/regression-metrics.md)
-- **Classification:** [logistic-regression.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/logistic-regression.md) | [decision-trees.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/decision-trees.md) | [random-forest.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/random-forest.md) | [knn.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/knn.md) | [svm.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/svm.md) | [classification-metrics.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/classification/classification-metrics.md)
-- **Clustering:** [k-means.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/clustering/k-means.md) | [dbscan.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/clustering/dbscan.md) | [clustering-evaluation.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/clustering/clustering-evaluation.md)
-- **Model Selection:** [grid-search.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/model-selection/grid-search.md) | [randomized-search.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/model-selection/randomized-search.md) | [model-selection.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/model-selection/model-selection.md)
+- **Preprocessing:** [missing-values.md](../classical-ml/preprocessing/missing-values.md) | [encoding.md](../classical-ml/preprocessing/encoding.md) | [feature-scaling.md](../classical-ml/preprocessing/feature-scaling.md) | [pipelines.md](../classical-ml/preprocessing/pipelines.md)
+- **Regression:** [linear-regression.md](../classical-ml/regression/linear-regression.md) | [regularization.md](../classical-ml/regression/regularization.md) | [regression-metrics.md](../classical-ml/regression/regression-metrics.md)
+- **Classification:** [logistic-regression.md](../classical-ml/classification/logistic-regression.md) | [decision-trees.md](../classical-ml/classification/decision-trees.md) | [random-forest.md](../classical-ml/classification/random-forest.md) | [knn.md](../classical-ml/classification/knn.md) | [svm.md](../classical-ml/classification/svm.md) | [classification-metrics.md](../classical-ml/classification/classification-metrics.md)
+- **Clustering:** [k-means.md](../classical-ml/clustering/k-means.md) | [dbscan.md](../classical-ml/clustering/dbscan.md) | [clustering-evaluation.md](../classical-ml/clustering/clustering-evaluation.md)
+- **Model Selection:** [grid-search.md](../classical-ml/model-selection/grid-search.md) | [randomized-search.md](../classical-ml/model-selection/randomized-search.md) | [model-selection.md](../classical-ml/model-selection/model-selection.md)
 
 ---
 
 ## 1. Algorithm Taxonomy & Conceptual Map
 
-```
+```text
                            Classical Machine Learning
                                       │
             ┌─────────────────────────┴─────────────────────────┐
@@ -116,7 +116,7 @@ $$
 
 When features exhibit high multicollinearity or model capacity causes overfitting, regularization penalties constrain coefficient magnitudes.
 
-```
+```text
        L1 Penalty (Lasso)                     L2 Penalty (Ridge)
           w2                                     w2
           ▲                                      ▲
@@ -167,8 +167,8 @@ $$
 | **Mean Absolute Error (MAE)** | $\frac{1}{n} \sum_{i=1}^n \lvert y_i - \hat{y}_i \rvert$ | Direct, intuitive average error in target units. Robust to extreme outliers; linear error penalty. |
 | **Mean Squared Error (MSE)** | $\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2$ | Quadratically penalizes large errors. Highly sensitive to outliers; differentiable objective function. |
 | **Root Mean Squared Error (RMSE)** | $\sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$ | Retains quadratic penalty of MSE while returning to original target units for interpretability. |
-| **R² Score (Determination)** | ${1} - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$ | Fraction of target variance explained by features. Baseline mean prediction achieves $R^2 = 0.0$; can be negative on test sets. |
-| **Adjusted R²** | ${1} - \left[ \frac{(1 - R^2)(n - 1)}{n - p - 1} \right]$ | Penalizes the addition of non-informative features ($p$ = feature count, $n$ = sample count). |
+| **R² Score (Determination)** | $1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$ | Fraction of target variance explained by features. Baseline mean prediction achieves $R^2 = 0.0$; can be negative on test sets. |
+| **Adjusted R²** | $1 - \left[ \frac{(1 - R^2)(n - 1)}{n - p - 1} \right]$ | Penalizes the addition of non-informative features ($p$ = feature count, $n$ = sample count). |
 
 ---
 
@@ -229,7 +229,7 @@ An instance-based, lazy learning algorithm:
 
 Recursively partitions the feature space into axis-aligned rectangular regions using greedy binary splits.
 
-```
+```text
                    [Feature X1 <= 2.5]
                        /         \
                      Yes          No
@@ -274,7 +274,7 @@ Combines a collection of de-correlated decision trees to dramatically reduce var
 
 Finds the optimal separating hyperplane that maximizes the margin (geometric distance between the decision boundary and the nearest training points, termed **support vectors**).
 
-```
+```text
                x  (Class +1)
              x   /
            x    /  <-- Margin boundary (w^T x + b = +1)
@@ -284,7 +284,7 @@ Finds the optimal separating hyperplane that maximizes the margin (geometric dis
             /  o   <-- Margin boundary (w^T x + b = -1)
            /  o
           o       (Class -1)
-          
+
       Margin Width = 2 / ||w||
 ```
 
@@ -314,7 +314,7 @@ $$
 
 ### 6. Classification Evaluation Metrics
 
-```
+```text
                     Actual Positive (1)        Actual Negative (0)
                 ┌──────────────────────────┬──────────────────────────┐
   Predicted     │   True Positive (TP)     │   False Positive (FP)    │
@@ -331,7 +331,7 @@ $$
 | **Precision** | $\frac{TP}{TP + FP}$ | "Of all predicted positive, how many were truly positive?" Critical when False Positives are expensive (e.g., spam detection). |
 | **Recall (Sensitivity)** | $\frac{TP}{TP + FN}$ | "Of all actual positives, how many did we capture?" Critical when False Negatives are catastrophic (e.g., tumor diagnosis). |
 | **Specificity** | $\frac{TN}{TN + FP}$ | True Negative Rate. True rejections out of all actual negatives. |
-| **F1-Score** | ${2} \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$ | Harmonic mean of precision and recall. Punishes extreme imbalances between precision and recall. |
+| **F1-Score** | $2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$ | Harmonic mean of precision and recall. Punishes extreme imbalances between precision and recall. |
 | **ROC-AUC** | Area Under Receiver Operating Characteristic Curve | True Positive Rate vs False Positive Rate across all thresholds. Evaluates ranking ability; threshold-independent. |
 | **PR-AUC** | Area Under Precision-Recall Curve | Precision vs Recall across all thresholds. Preferred evaluation metric for rare positive classes (e.g., fraud). |
 
@@ -408,7 +408,7 @@ Discovers clusters of arbitrary shape based on spatial point density and isolate
 
 ### Search Strategies
 
-```
+```text
       GridSearchCV                           RandomizedSearchCV
   Param 2                                Param 2
      ▲                                      ▲

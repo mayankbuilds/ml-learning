@@ -3,17 +3,17 @@
 A rigorous concept reference and revision guide detailing the foundational mathematics powering machine learning: Linear Algebra, Multivariable Calculus, Numerical Optimization, Probability Theory, and Statistical Inference.
 
 Related deep-dive topic guides:
-- **Linear Algebra:** [linear-algebra-notes.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/linear-algebra-notes.md) | [scalars-vectors.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/scalars-vectors.md) | [vector-magnitude-euclidean-distance.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/vector-magnitude-euclidean-distance.md) | [matrices.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/matrices.md) | [matrix-operations.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/matrix-operations.md) | [matrix-transpose.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/matrix-transpose.md) | [special-matrices.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/linear-algebra/special-matrices.md)
-- **Calculus:** [calculus.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/calculus/calculus.md)
-- **Optimization:** [optimization.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/optimization/optimization.md)
-- **Probability:** [probability-notes.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/probability/probability-notes.md)
-- **Statistics:** [statistics-notes.md](file:///mnt/E_Drive/Projects/ml-learning/mathematics/statistics/statistics-notes.md)
+- **Linear Algebra:** [linear-algebra-notes.md](../mathematics/linear-algebra/linear-algebra-notes.md) | [scalars-vectors.md](../mathematics/linear-algebra/scalars-vectors.md) | [vector-magnitude-euclidean-distance.md](../mathematics/linear-algebra/vector-magnitude-euclidean-distance.md) | [matrices.md](../mathematics/linear-algebra/matrices.md) | [matrix-operations.md](../mathematics/linear-algebra/matrix-operations.md) | [matrix-transpose.md](../mathematics/linear-algebra/matrix-transpose.md) | [special-matrices.md](../mathematics/linear-algebra/special-matrices.md)
+- **Calculus:** [calculus.md](../mathematics/calculus/calculus.md)
+- **Optimization:** [optimization.md](../mathematics/optimization/optimization.md)
+- **Probability:** [probability-notes.md](../mathematics/probability/probability-notes.md)
+- **Statistics:** [statistics-notes.md](../mathematics/statistics/statistics-notes.md)
 
 ---
 
 ## 1. Mathematical Pillars of Machine Learning
 
-```
+```text
                             Mathematics in ML
                                    │
       ┌────────────────┬───────────┴───────────┬────────────────┐
@@ -265,7 +265,7 @@ $$
 
 ### 1. Convexity: The Ideal Landscape
 
-```
+```text
        Convex Function                         Non-Convex Function
             Loss                                      Loss
              ▲                                         ▲
@@ -355,7 +355,7 @@ $$
 P(\theta \mid D) = \frac{P(D \mid \theta) P(\theta)}{P(D)} = \frac{P(D \mid \theta) P(\theta)}{\int P(D \mid \theta') P(\theta') d\theta'}
 $$
 
-```
+```text
   Posterior           Likelihood        Prior
   P(θ | D)     =      P(D | θ)    *     P(θ)     /     P(D)
  (Updated belief     (Data probability (Belief before    (Evidence /
@@ -429,6 +429,7 @@ Statistics provides the principles for drawing sound conclusions from finite, no
 - **Sample:** Finite subset observed in practice ($\bar{x}, s^2$).
 
 #### Sample Mean
+
 $$
 \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i
 $$
@@ -500,7 +501,7 @@ $$
 
 Determines whether observed experimental differences between models are statistically significant or attributable to random sampling variability.
 
-```
+```text
                          Truth: H0 True             Truth: H0 False
                      ┌──────────────────────────┬──────────────────────────┐
   Decision:          │   Correct Decision       │   Type II Error (β)      │

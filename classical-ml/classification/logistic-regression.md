@@ -8,15 +8,15 @@ Despite its name, it is commonly used for classification rather than predicting 
 
 For binary classification, it first calculates a linear score:
 
-\[
+$$
 z=b_0+b_1x_1+\cdots+b_px_p
-\]
+$$
 
 It then converts that score into a probability using the sigmoid function:
 
-\[
+$$
 \sigma(z)=\frac{1}{1+e^{-z}}
-\]
+$$
 
 The output lies between 0 and 1 and can be interpreted as an estimated probability for class 1 when the model is appropriately fitted and calibrated.
 

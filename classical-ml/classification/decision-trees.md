@@ -14,19 +14,19 @@ A tree selects splits that improve class purity according to a criterion.
 
 ### Gini Impurity
 
-\[
-Gini=1-\sum_{k=1}^{K}p_k^2
-\]
+$$
+\text{Gini}=1-\sum_{k=1}^{K}p_k^2
+$$
 
-Here, \(p_k\) is the fraction of observations belonging to class \(k\) at a node.
+Here, $p_k$ is the fraction of observations belonging to class $k$ at a node.
 
 Gini is zero when all observations at the node belong to one class.
 
 ### Entropy
 
-\[
+$$
 H=-\sum_{k=1}^{K}p_k\log_2(p_k)
-\]
+$$
 
 Entropy is also zero for a pure node. Information gain measures the reduction in entropy after a split.
 

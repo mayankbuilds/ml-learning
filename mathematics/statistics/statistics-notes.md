@@ -12,12 +12,13 @@ ML connections:
 
 ## 2. Mean, Median, and Mode
 
-For values \(x_1,\ldots,x_n\):
+For values $x_1,\ldots,x_n$:
 
 ### Mean
-\[
+
+$$
 \bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i
-\]
+$$
 
 Mean uses every value, so extreme values can pull it strongly.
 
@@ -51,18 +52,20 @@ print("Mode:", values[np.argmax(counts)])  # 3
 Variance measures spread around the mean; standard deviation is its square root and is expressed in the same units as the data.
 
 For a population:
-\[
+
+$$
 \sigma^2=\frac{1}{N}\sum_{i=1}^{N}(x_i-\mu)^2
-\]
+$$
 
-For a sample, the common unbiased variance estimator uses \(n-1\):
-\[
+For a sample, the common unbiased variance estimator uses $n-1$:
+
+$$
 s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
-\]
+$$
 
-\[
+$$
 \text{Standard deviation}=\sqrt{\text{variance}}
-\]
+$$
 
 NumPy defaults to population variance (`ddof=0`). Use `ddof=1` for sample variance.
 
@@ -80,11 +83,12 @@ Higher variance/SD means more spread, not necessarily worse data. Variance is in
 A percentile tells you the value below which a given percentage of observations falls. The median is the 50th percentile.
 
 The interquartile range (IQR) is:
-\[
-IQR=Q_3-Q_1
-\]
 
-A common boxplot rule flags values below \(Q_1-1.5IQR\) or above \(Q_3+1.5IQR\) as potential outliers. These are flags for investigation, not automatic proof that data is wrong.
+$$
+\text{IQR}=Q_3-Q_1
+$$
+
+A common boxplot rule flags values below $Q_1-1.5IQR$ or above $Q_3+1.5IQR$ as potential outliers. These are flags for investigation, not automatic proof that data is wrong.
 
 ```python
 q1, q3 = np.percentile(x, [25, 75])
@@ -96,11 +100,12 @@ iqr = q3 - q1
 Covariance describes whether two variables tend to move together. Its magnitude depends on the units, so it is hard to compare across datasets.
 
 Pearson correlation standardizes the relationship:
-\[
-r=\frac{\operatorname{cov}(X,Y)}{\sigma_X\sigma_Y}
-\]
 
-- \(r\) is between -1 and +1.
+$$
+r=\frac{\operatorname{cov}(X,Y)}{\sigma_X\sigma_Y}
+$$
+
+- $r$ is between -1 and +1.
 - Near +1: strong positive linear association.
 - Near -1: strong negative linear association.
 - Near 0: little or no linear association (a nonlinear relationship may still exist).
@@ -114,6 +119,7 @@ print(np.corrcoef(hours, scores)[0, 1])
 ```
 
 In a DataFrame:
+
 ```python
 # df.corr(numeric_only=True)
 ```
@@ -143,16 +149,16 @@ Larger representative samples generally reduce sampling uncertainty, but do not 
 
 Hypothesis testing helps assess whether sample evidence is inconsistent with a specified null hypothesis.
 
-- **Null hypothesis \(H_0\):** a baseline claim, often “no difference.”
-- **Alternative hypothesis \(H_1\):** the difference/effect being investigated.
-- **Significance level \(\alpha\):** chosen threshold, often 0.05.
-- **p-value:** assuming \(H_0\) and the test assumptions are true, the probability of results at least as extreme as those observed.
+- **Null hypothesis $H_0$:** a baseline claim, often “no difference.”
+- **Alternative hypothesis $H_1$:** the difference/effect being investigated.
+- **Significance level $\alpha$:** chosen threshold, often 0.05.
+- **p-value:** assuming $H_0$ and the test assumptions are true, the probability of results at least as extreme as those observed.
 
 Decision rule (simple version):
-- If \(p \leq \alpha\), reject \(H_0\).
-- If \(p > \alpha\), fail to reject \(H_0\); this does not prove \(H_0\) true.
+- If $p \leq \alpha$, reject $H_0$.
+- If $p > \alpha$, fail to reject $H_0$; this does not prove $H_0$ true.
 
-A p-value is **not** the probability that \(H_0\) is true, and statistical significance does not guarantee practical importance.
+A p-value is **not** the probability that $H_0$ is true, and statistical significance does not guarantee practical importance.
 
 ### Errors and power
 - **Type I error:** reject a true null hypothesis (false positive).
@@ -211,12 +217,12 @@ print("Correlation:", np.corrcoef(hours, marks)[0, 1])
 
 | Concept | Formula / interpretation |
 |---|---|
-| Mean | \(\bar{x}=\sum x_i/n\) |
-| Population variance | \(\sigma^2=\sum(x_i-\mu)^2/N\) |
-| Sample variance | \(s^2=\sum(x_i-\bar{x})^2/(n-1)\) |
+| Mean | $\bar{x}=\sum x_i/n$ |
+| Population variance | $\sigma^2=\sum(x_i-\mu)^2/N$ |
+| Sample variance | $s^2=\sum(x_i-\bar{x})^2/(n-1)$ |
 | Standard deviation | Square root of variance |
-| IQR | \(Q_3-Q_1\) |
-| Pearson correlation | \(\operatorname{cov}(X,Y)/(\sigma_X\sigma_Y)\) |
+| IQR | $Q_3-Q_1$ |
+| Pearson correlation | $\operatorname{cov}(X,Y)/(\sigma_X\sigma_Y)$ |
 | Type I error | Reject a true null |
 | Type II error | Fail to reject a false null |
-| p-value | Probability of equally/more extreme data, assuming \(H_0\) and assumptions |
+| p-value | Probability of equally/more extreme data, assuming $H_0$ and assumptions |

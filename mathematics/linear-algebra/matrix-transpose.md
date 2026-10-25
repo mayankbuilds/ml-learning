@@ -4,7 +4,7 @@
 
 ## 1. What is a transpose?
 
-The transpose swaps a matrix's rows and columns. It is written as `A.T` in NumPy and as Aᵀ in mathematics.
+The transpose swaps a matrix's rows and columns. It is written as `A.T` in NumPy and as $A^T$ in mathematics.
 
 Example:
 

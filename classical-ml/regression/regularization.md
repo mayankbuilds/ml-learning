@@ -12,15 +12,15 @@ A regularized model trades off fitting the training data against the penalty.
 
 Ridge adds a squared-coefficient penalty to the least-squares objective:
 
-\[
+$$
 J(\boldsymbol{\beta}) =
 \sum_{i=1}^{n}(y_i-\hat{y}_i)^2
 +\alpha\sum_{j=1}^{p}\beta_j^2
-\]
+$$
 
-Here, \(\alpha\) controls regularization strength.
+Here, $\alpha$ controls regularization strength.
 
-- Larger \(\alpha\) applies stronger shrinkage.
+- Larger $\alpha$ applies stronger shrinkage.
 - Coefficients are generally reduced in magnitude.
 - Ridge typically does not force coefficients exactly to zero.
 - It can be useful when many features contribute or features are correlated.
@@ -31,13 +31,13 @@ The intercept is not penalized by default in scikit-learn's `Ridge`.
 
 Lasso adds an absolute-coefficient penalty:
 
-\[
+$$
 J(\boldsymbol{\beta}) =
 \sum_{i=1}^{n}(y_i-\hat{y}_i)^2
 +\alpha\sum_{j=1}^{p}|\beta_j|
-\]
+$$
 
-- Larger \(\alpha\) applies stronger shrinkage.
+- Larger $\alpha$ applies stronger shrinkage.
 - Some coefficients can become exactly zero.
 - This can produce a sparse model.
 - With correlated features, which feature remains selected can be unstable.

@@ -6,22 +6,22 @@ Linear Regression is a supervised learning algorithm that models the relationshi
 
 For one feature:
 
-\[
+$$
 \hat{y} = b_0 + b_1x
-\]
+$$
 
 For multiple features:
 
-\[
+$$
 \hat{y} = b_0 + b_1x_1 + \cdots + b_px_p
-\]
+$$
 
 Where:
 
-- \(\hat{y}\): predicted value
-- \(b_0\): intercept
-- \(b_i\): coefficient associated with feature \(x_i\)
-- \(p\): number of features
+- $\hat{y}$: predicted value
+- $b_0$: intercept
+- $b_i$: coefficient associated with feature $x_i$
+- $p$: number of features
 
 The fitted coefficients are commonly estimated using Ordinary Least Squares (OLS), which minimizes the sum of squared residuals.
 
@@ -29,15 +29,15 @@ The fitted coefficients are commonly estimated using Ordinary Least Squares (OLS
 
 A residual is the difference between an observed target and its prediction:
 
-\[
+$$
 e_i = y_i - \hat{y}_i
-\]
+$$
 
 OLS minimizes the residual sum of squares:
 
-\[
-RSS = \sum_{i=1}^{n}(y_i-\hat{y}_i)^2
-\]
+$$
+\text{RSS} = \sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+$$
 
 Squaring penalizes large errors more heavily than small errors.
 
@@ -47,9 +47,9 @@ A coefficient describes the change in the model's predicted target for a one-uni
 
 Example:
 
-\[
+$$
 \widehat{\text{Price}} = 10 + 0.04(\text{Area})
-\]
+$$
 
 If area is measured in square feet and price in lakh, the model predicts an increase of 0.04 lakh for each additional square foot.
 

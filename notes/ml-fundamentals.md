@@ -3,12 +3,12 @@
 Comprehensive concept notes and revision guide for the foundational principles, workflows, and core diagnostics of machine learning.
 
 Related deep-dive topics:
-- [ml-workflow.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/fundamentals/ml-workflow.md)
-- [overfitting-underfitting.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/fundamentals/overfitting-underfitting.md)
-- [baseline-models.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/fundamentals/baseline-models.md)
-- [model-persistence.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/fundamentals/model-persistence.md)
-- [data-leakage.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/data-leakage.md)
-- [train-test-validation.md](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/evaluation/train-test-validation.md)
+- [ml-workflow.md](../classical-ml/fundamentals/ml-workflow.md)
+- [overfitting-underfitting.md](../classical-ml/fundamentals/overfitting-underfitting.md)
+- [baseline-models.md](../classical-ml/fundamentals/baseline-models.md)
+- [model-persistence.md](../classical-ml/fundamentals/model-persistence.md)
+- [data-leakage.md](../classical-ml/preprocessing/data-leakage.md)
+- [train-test-validation.md](../classical-ml/evaluation/train-test-validation.md)
 
 ---
 
@@ -47,7 +47,7 @@ Where:
 
 ## 2. Taxonomy of Machine Learning
 
-```
+```text
                             Machine Learning
                                    │
          ┌─────────────────────────┼─────────────────────────┐
@@ -83,7 +83,7 @@ An autonomous agent interacts with a dynamic environment through trial and error
 
 A reliable machine learning project follows an iterative, disciplined workflow:
 
-```
+```text
   ┌────────────────────────────────────────────────────────────────────────┐
   │ 1. Problem Formulation & Metric Definition                             │
   └──────────────────────────────────┬─────────────────────────────────────┘
@@ -129,7 +129,7 @@ A reliable machine learning project follows an iterative, disciplined workflow:
 1. **Define success before modeling:** Select evaluation metrics aligned with operational costs (e.g., False Negatives vs False Positives) before comparing algorithms.
 2. **Split data early:** Isolate the test set before computing any scaling statistics, imputations, or feature selections.
 3. **Establish a baseline immediately:** Measure a simple naive baseline before declaring any complex model successful.
-4. **Treat preprocessing as part of the model:** Encapsulate transformers and estimators inside a scikit-learn [`Pipeline`](file:///mnt/E_Drive/Projects/ml-learning/classical-ml/preprocessing/pipelines.md).
+4. **Treat preprocessing as part of the model:** Encapsulate transformers and estimators inside a scikit-learn [`Pipeline`](../classical-ml/preprocessing/pipelines.md).
 5. **Inspect residuals and misclassifications:** Aggregate benchmark numbers alone do not reveal systematic bias or failure modes.
 
 ---
@@ -140,7 +140,7 @@ Generalization is the model's capacity to deliver accurate predictions on new, p
 
 ### The Diagnostic Spectrum
 
-```
+```text
    High Bias                                                      High Variance
  (Underfitting)                   Optimal Fit                    (Overfitting)
        X                                                               X   X
@@ -218,7 +218,7 @@ As model complexity increases:
 
 Evaluating a model on the data used to fit its parameters creates optimistic, unreliable estimates. A rigorous splitting protocol is required.
 
-```
+```text
 Total Dataset
  ├── Training Set (~70%)    ──► Fit model parameters (weights, coefficients)
  ├── Validation Set (~15%)  ──► Tune hyperparameters, select best architecture
@@ -260,7 +260,7 @@ Combines K-Fold with stratification, preserving target class proportions within 
 When observations exhibit temporal dependencies, random shuffling causes future information to leak into past predictions.
 - **Rule:** Training folds must strictly precede validation folds in chronological order (expanding or rolling window).
 
-```
+```text
 Fold 1: [Train] [Val]
 Fold 2: [ Train   ] [Val]
 Fold 3: [   Train     ] [Val]
@@ -309,7 +309,7 @@ baseline_clf_pred = dummy_clf.predict(X_test)
 
 **Data leakage** occurs when information from outside the training dataset is inadvertently introduced into the model fitting process, producing artificially optimistic evaluation scores that collapse in production.
 
-```
+```text
        WRONG (Data Leakage)                      CORRECT (Safe Pipeline)
 ┌─────────────────────────────────┐       ┌─────────────────────────────────┐
 │     Full Dataset (All Rows)     │       │     Full Dataset (All Rows)     │

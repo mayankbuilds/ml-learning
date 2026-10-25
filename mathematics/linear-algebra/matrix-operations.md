@@ -6,14 +6,14 @@
 
 Two matrices with the same shape can be added by adding corresponding elements.
 
-\[
+$$
 A=\begin{bmatrix}1&2\\3&4\end{bmatrix},\quad
 B=\begin{bmatrix}5&6\\7&8\end{bmatrix}
-\]
+$$
 
-\[
+$$
 A+B=\begin{bmatrix}6&8\\10&12\end{bmatrix}
-\]
+$$
 
 ```python
 import numpy as np
@@ -32,9 +32,9 @@ Ordinary matrix addition requires matching shapes. NumPy broadcasting is a separ
 
 Subtract corresponding elements. For ordinary subtraction, the shapes must match.
 
-\[
+$$
 A-B=\begin{bmatrix}-4&-4\\-4&-4\end{bmatrix}
-\]
+$$
 
 ```python
 print(A - B)
@@ -46,9 +46,9 @@ Subtraction is generally not commutative: `A - B` is usually different from `B -
 
 Multiply every element of a matrix by the same scalar.
 
-\[
+$$
 3A=\begin{bmatrix}3&6\\9&12\end{bmatrix}
-\]
+$$
 
 ```python
 print(3 * A)
@@ -62,10 +62,10 @@ These are different operations.
 
 Multiply values at matching positions. NumPy uses `*` for this.
 
-\[
+$$
 A*B=\begin{bmatrix}1\cdot5&2\cdot6\\3\cdot7&4\cdot8\end{bmatrix}
 =\begin{bmatrix}5&12\\21&32\end{bmatrix}
-\]
+$$
 
 ```python
 print(A * B)
@@ -79,13 +79,13 @@ If `A` has shape `(m, n)` and `B` has shape `(n, p)`, then `A @ B` has shape `(m
 
 For the example above:
 
-\[
+$$
 AB=\begin{bmatrix}
 1\cdot5+2\cdot7 & 1\cdot6+2\cdot8\\
 3\cdot5+4\cdot7 & 3\cdot6+4\cdot8
 \end{bmatrix}
 =\begin{bmatrix}19&22\\43&50\end{bmatrix}
-\]
+$$
 
 ```python
 print(A @ B)

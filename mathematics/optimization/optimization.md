@@ -8,13 +8,13 @@ Optimization means finding parameter values that minimize or maximize an objecti
 
 A loss function measures how wrong a model's prediction is. Consider:
 
-\[
+$$
 L(w)=(w-3)^2
-\]
+$$
 
-Here \(w\) is a model parameter. The loss is zero at \(w=3\).
+Here $w$ is a model parameter. The loss is zero at $w=3$.
 
-| \(w\) | \(L(w)\) |
+| $w$ | $L(w)$ |
 |---:|---:|
 | 0 | 9 |
 | 1 | 4 |
@@ -31,27 +31,27 @@ For functions with multiple parameters, the gradient is the vector of partial de
 
 For:
 
-\[
+$$
 L(w,b)=w^2+3b^2
-\]
+$$
 
-\[
+$$
 \nabla L(w,b)=
 \begin{bmatrix}
 2w\\
 6b
 \end{bmatrix}
-\]
+$$
 
-At \(w=2, b=1\):
+At $w=2, b=1$:
 
-\[
+$$
 \nabla L(2,1)=
 \begin{bmatrix}
 4\\
 6
 \end{bmatrix}
-\]
+$$
 
 To reduce loss using gradient descent, move in the opposite direction to the gradient.
 
@@ -59,34 +59,34 @@ To reduce loss using gradient descent, move in the opposite direction to the gra
 
 Gradient descent repeatedly updates model parameters to reduce loss.
 
-For one parameter \(w\):
+For one parameter $w$:
 
-\[
+$$
 w_{\text{new}}=w_{\text{old}}-\eta\frac{dL}{dw}
-\]
+$$
 
 where:
-- \(w\) is the parameter;
-- \(\eta\) (eta) is the learning rate;
-- \(\frac{dL}{dw}\) is the derivative of the loss.
+- $w$ is the parameter;
+- $\eta$ (eta) is the learning rate;
+- $\frac{dL}{dw}$ is the derivative of the loss.
 
-For \(L(w)=(w-3)^2\):
+For $L(w)=(w-3)^2$:
 
-\[
+$$
 \frac{dL}{dw}=2(w-3)
-\]
+$$
 
-Start with \(w=0\) and learning rate \(\eta=0.1\):
+Start with $w=0$ and learning rate $\eta=0.1$:
 
-\[
+$$
 L'(0)=2(0-3)=-6
-\]
+$$
 
-\[
+$$
 w_{\text{new}}=0-0.1(-6)=0.6
-\]
+$$
 
-Loss decreases from \(L(0)=9\) to \(L(0.6)=5.76\). Repeating the update moves \(w\) closer to 3.
+Loss decreases from $L(0)=9$ to $L(0.6)=5.76$. Repeating the update moves $w$ closer to 3.
 
 ## 5. Learning rate
 
@@ -129,9 +129,9 @@ print("Final loss:", loss(w))
 
 A numerical approximation to a derivative is:
 
-\[
+$$
 f'(x)\approx\frac{f(x+h)-f(x-h)}{2h}
-\]
+$$
 
 ```python
 def f(x):
@@ -158,18 +158,18 @@ This helps check whether a manually derived derivative or gradient implementatio
 
 ## 9. Quick formula sheet
 
-\[
+$$
 \nabla L=
 \begin{bmatrix}
 \partial L/\partial w_1\\
 \partial L/\partial w_2\\
 \vdots
 \end{bmatrix}
-\]
+$$
 
-\[
+$$
 \theta_{\text{new}}=\theta_{\text{old}}-\eta\nabla L(\theta)
-\]
+$$
 
 ## 10. ML connection summary
 

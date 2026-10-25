@@ -10,9 +10,9 @@ No single metric proves that clusters are meaningful.
 
 Inertia is the sum of squared distances between each point and its assigned centroid.
 
-\[
+$$
 \text{Inertia} = \sum_{i=1}^{K}\sum_{x\in C_i}\|x-\mu_i\|^2
-\]
+$$
 
 - Lower inertia means points are closer to their centroids.
 - It is commonly used with K-Means.
@@ -23,14 +23,14 @@ Inertia is the sum of squared distances between each point and its assigned cent
 
 The silhouette score measures how well a point fits its own cluster compared with the nearest alternative cluster.
 
-\[
+$$
 s = \frac{b-a}{\max(a,b)}
-\]
+$$
 
 Where:
 
-- \(a\): Average distance from the point to other points in its own cluster.
-- \(b\): Lowest average distance to points in another cluster.
+- $a$: Average distance from the point to other points in its own cluster.
+- $b$: Lowest average distance to points in another cluster.
 
 Interpretation:
 
@@ -42,9 +42,9 @@ The score ranges from `-1` to `1`. It requires at least two clusters and fewer c
 
 ## 4. Elbow Method
 
-1. Fit K-Means with several values of \(K\).
+1. Fit K-Means with several values of $K$.
 2. Record inertia for each value.
-3. Plot \(K\) against inertia.
+3. Plot $K$ against inertia.
 4. Look for a bend where further reductions in inertia become less substantial.
 
 The elbow is a heuristic, not a guaranteed optimal cluster count.

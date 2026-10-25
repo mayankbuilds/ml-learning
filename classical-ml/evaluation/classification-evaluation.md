@@ -17,9 +17,9 @@ For binary classification:
 
 The fraction of all predictions that are correct.
 
-\[
+$$
 \text{Accuracy}=\frac{TP+TN}{TP+TN+FP+FN}
-\]
+$$
 
 Accuracy can be misleading when classes are imbalanced.
 
@@ -27,9 +27,9 @@ Accuracy can be misleading when classes are imbalanced.
 
 The fraction of predicted positive cases that are actually positive.
 
-\[
+$$
 \text{Precision}=\frac{TP}{TP+FP}
-\]
+$$
 
 High precision means fewer false positives among predicted positives.
 
@@ -37,9 +37,9 @@ High precision means fewer false positives among predicted positives.
 
 The fraction of actual positive cases correctly identified.
 
-\[
+$$
 \text{Recall}=\frac{TP}{TP+FN}
-\]
+$$
 
 High recall means fewer positive cases are missed.
 
@@ -47,9 +47,9 @@ High recall means fewer positive cases are missed.
 
 The harmonic mean of precision and recall.
 
-\[
+$$
 F_1=2\cdot\frac{\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}
-\]
+$$
 
 F1 is useful when both precision and recall matter.
 
